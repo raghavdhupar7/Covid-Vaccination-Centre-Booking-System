@@ -1,6 +1,6 @@
 import sys
 
-sys.path.append(r"F:\Flipkart")
+sys.path.append(r"F:\main_folder")
 from covid.services.user_service import UserService
 
 

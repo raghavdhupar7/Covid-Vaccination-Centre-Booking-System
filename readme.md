@@ -20,7 +20,7 @@ Assumptions:
 
 ### Executing program
 
-- this is the main folder
+- use this as a main folder
 
 - please use this folder path in sys.path.append(r"THIS_FOLDERs_PATH")
 

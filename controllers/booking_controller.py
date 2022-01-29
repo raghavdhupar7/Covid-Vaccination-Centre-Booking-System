@@ -1,6 +1,6 @@
 import sys
 
-sys.path.append(r"F:\Flipkart")
+sys.path.append(r"F:\main_folder")
 from covid.services.booking_service import BookingService
 from covid.services.center_service import CenterService
 from covid.services.user_service import UserService
@@ -28,7 +28,7 @@ class BookingController(object):
             self.bookingService.addBooking(bookingId, centerId, day, userId)
             currentCapacity = center.getCapacity(day)
             center.setCapacity(day, currentCapacity - 1)
-            print("Booking Added Successfully") 
+            print("Booking Added Successfully")
 
     def listAllBookings(self, centerId, day):
         print("Below down is the list of All the bookings: ")

@@ -1,6 +1,6 @@
 import sys
 
-sys.path.append(r"F:\Flipkart")
+sys.path.append(r"F:\main_folder")
 from covid.services.center_service import CenterService
 
 
@@ -33,7 +33,7 @@ class CenterController(object):
         centers = []
 
         for centerId, center in self.centerService.centerDetails.items():  # check here
-            if center.getDistrictName() == district: #and center.getCapacity(day) > 0:
+            if center.getDistrictName() == district:  # and center.getCapacity(day) > 0:
                 centers.append(center.getId())
 
         print("Centers in district " + district + " having capacity are:")
