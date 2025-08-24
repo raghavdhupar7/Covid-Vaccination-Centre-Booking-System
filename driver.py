@@ -1,6 +1,6 @@
 import sys
 
-sys.path.append(r"F:\Flipkart")
+sys.path.append(r"F:\CovidManagementCentre")
 
 
 from covid.controllers.booking_controller import BookingController
