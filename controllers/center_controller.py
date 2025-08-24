@@ -1,23 +1,26 @@
 import sys
 
-sys.path.append(r"F:\main_folder")
-from covid.services.center_service import CenterService
+sys.path.append(r"r:/Github/Covid-Vaccination-Centre-Booking-System")
+from services.center_service import CenterService
 
 
 class CenterController(object):
-    def __init__(self) -> None:
-        self.centerService = CenterService()
+    def __init__(self, centerService: CenterService) -> None:
+        self.centerService = centerService
 
-    def addCenter(self, stateName, districtName, id):
+    def addCenter(self, stateName: str, districtName: str, id: str):
         if id in self.centerService.centerDetails:
-            print("Center ID already exists")
+            raise ValueError("Center ID already exists")
         else:
             return self.centerService.addCenter(stateName, districtName, id)
 
-    def addCapacity(self, id, day, capacity):
+    def addCapacity(self, id: str, day: str, capacity: int) -> None:
+        if id not in self.centerService.centerDetails:
+            print(f"Center '{id}' does not exist.")
+            return None
         self.centerService.addCapacity(id, day, capacity)
 
-    def listVaccinationCenters(self, district):
+    def listVaccinationCenters(self, district: str) -> None:
         centers = []
 
         for centerId, center in self.centerService.centerDetails.items():  # check here
@@ -28,7 +31,7 @@ class CenterController(object):
         for centerName in centers:
             print(centerName)
 
-    def searchVaccincationCenter(self, day, district):
+    def searchVaccincationCenter(self, day: str, district: str) -> None:
 
         centers = []
 

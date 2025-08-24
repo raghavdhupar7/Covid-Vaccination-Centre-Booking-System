@@ -11,8 +11,8 @@ class Booking(object):
     def getId(self):
         return self.id
 
-    def setCentreId(self, centreId):
-        self.centreId = centreId
+    def setCenterId(self, centerId):
+        self.centerId = centerId
 
     def getCenterId(self):
         return self.centerId
@@ -26,5 +26,8 @@ class Booking(object):
     def setDay(self, day):
         self.day = day
 
-    def getday(self):
+    def getDay(self):
         return self.day
+
+    def __str__(self):
+        return f"Booking(id={self.id}, centerId={self.centerId}, userId={self.userId}, day={self.day})"
